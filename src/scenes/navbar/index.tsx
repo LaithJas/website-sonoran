@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useState } from "react";
-import ActionButton from "@/shared/ActionButton";
+import CustomLink from "@/shared/CustomLink";
 
 type Props = {
     isTopOfPage: boolean;
@@ -42,7 +42,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                                         selectedPage={selectedPage}
                                         setSelectedPage={setSelectedPage} />
                                     <Link
-                                        page="Our Classes"
+                                        page="FAQ"
                                         selectedPage={selectedPage}
                                         setSelectedPage={setSelectedPage} />
                                     <Link
@@ -52,7 +52,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                                 </div>
 
                                 <div className={`${flexBetween} gap-8`}>
-                                    <ActionButton setSelectedPage={setSelectedPage}>ADOT</ActionButton>
+                                    <CustomLink url="https://azdot.gov/mvd" >ADOT</CustomLink>
                                 </div>
 
                             </div>)
@@ -90,7 +90,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} />
                         <Link
-                            page="Our Classes"
+                            page="FAQ"
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} />
                         <Link
