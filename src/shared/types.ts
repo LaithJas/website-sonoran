@@ -4,7 +4,7 @@ import { StringifyOptions } from "querystring";
 export enum SelectedPage {
     Home = "home",
     Services = "services",
-    OurClasses = "ourclasses",
+    FAQ = "FAQ",
     ContactUs = "contactus",
 }
 
