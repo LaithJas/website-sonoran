@@ -2,6 +2,8 @@ import ActionButton from "@/shared/ActionButton";
 import HText from "@/shared/HText";
 import { BenefitType, SelectedPage } from "@/shared/types";
 import {
+    ClipboardDocumentListIcon,
+    CalendarDaysIcon,
     HomeModernIcon,
     UserGroupIcon,
     AcademicCapIcon,
@@ -12,10 +14,10 @@ import Benefit from "./Service";
 
 const services: Array<BenefitType> = [
     {
-        icon: <HomeModernIcon className="h-6 w-6" />,
-        title: "State of the Art Facilities",
+        icon: <ClipboardDocumentListIcon className="h-6 w-6" />,
+        title: "Title Transfer",
         description:
-            "Neque adipiscing amet amet enim. Feugiat dolor enim fermentum in a in lectus pellentesque. Ullamcorper et.",
+            "If you are buying or selling a car, we can help you Transfer the title from/to your name.",
     },
     {
         icon: <UserGroupIcon className="h-6 w-6" />,
@@ -44,9 +46,9 @@ type Props = {
 
 const Benefits = ({ setSelectedPage }: Props) => {
     return (
-        <section id="services" className="mx-auto min-h-full w-5/6 py-20">
+        <section id="services" className="mx-auto min-h-full w-5/6 py-20 bg-gray-20">
             <motion.div
-                onViewportEnter={() => setSelectedPage(SelectedPage.Service)}
+                onViewportEnter={() => setSelectedPage(SelectedPage.Services)}
             >
                 {/* HEADER */}
                 <motion.div
@@ -60,11 +62,9 @@ const Benefits = ({ setSelectedPage }: Props) => {
                         visible: { opacity: 1, x: 0 },
                     }}
                 >
-                    <HText>MORE THAN JUST GYM.</HText>
-                    <p className="my-5 text-sm">
-                        We provide world class fitness equipment, trainers and classes to
-                        get you to your ultimate fitness goals with ease. We provide true
-                        care into each and every member.
+                    <HText>WE ARE HERE TO HELP.</HText>
+                    <p className="my-5 text-sm text-gray-700">
+                        We Provide variaty of services for Customers and Dealers.
                     </p>
                 </motion.div>
 
