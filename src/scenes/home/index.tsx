@@ -2,7 +2,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
 import ActionButton from "@/shared/ActionButton";
 import HomePageText from "@/assets/SonoranText.png";
-import HomePageGraphic from "@/assets/carHomePageBlue.png";
+import HomePageGraphic from "@/assets/carNoBkHomeDesign.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 
