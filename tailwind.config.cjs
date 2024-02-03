@@ -4,9 +4,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                "gray-500": "#4b638e",
                 "gray-20": "#F8F4EB",
                 "gray-50": "#EFE6E6",
+                "gray-500": "#4b638e",
                 "gray-700": "#727572", //gray
                 "blue-100": "#4b638e",
                 "blue-200": "#1a3361",
@@ -24,7 +24,7 @@ module.exports = {
             },
             content: {
                 evolvetext: "url('./assets/MVDTextBlue.png')",
-                abstractwaves: "url('./assets/AbstractWaves.png')",
+                abstractwaves: "url('./assets/tumbleWeedSmall.png')",
                 sparkles: "url('./assets/Sparkles.png')",
                 circles: "url('./assets/Circles.png')",
             },

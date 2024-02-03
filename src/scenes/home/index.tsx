@@ -2,7 +2,9 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
 import ActionButton from "@/shared/ActionButton";
 import HomePageText from "@/assets/SonoranText.png";
-import HomePageGraphic from "@/assets/carHomePageBlue.png";
+import TumbleWeed from "@/assets/tumbleWeedSmall.png"
+import TWRotate55 from "@/assets/TWrotate55.png"
+import HomePageGraphic from "@/assets/carHomeDesign.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 
@@ -88,15 +90,17 @@ const Home = ({ setSelectedPage }: Props) => {
                 </div>
             </motion.div>
 
-            {/* SPONSORS */}
+            {/* SPONSORS 
             {isAboveMediumScreens && (
-                <div className="h-[150px] w-full bg-gray-20 py-10">
+                <div className="h-[150px] w-full bg-gray-20 ">
                     <div className="mx-auto w-5/6">
-                        <div className="flex w-3/5 items-center justify-between gap-8">
+                        <div className="flex items-center justify-between gap-8">
+                            <img alt="Tumble-Weed" src={TumbleWeed} />
+                            <img alt="Tumble-Weed55" src={TWRotate55} />
                         </div>
                     </div>
                 </div>
-            )}
+            )}*/}
         </section>
     );
 };
