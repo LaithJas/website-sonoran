@@ -1,8 +1,12 @@
 import Navbar from "@/scenes/navbar";
 import Home from "@/scenes/home"
 import Services from "@/scenes/services";
+import FAQ from "@/scenes/faq";
+import Contact from "./scenes/contact";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./scenes/footer";
 
 function App() {
     const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
@@ -21,15 +25,38 @@ function App() {
     })
 
     return (
-        <div className="app bg-blue-100">
+        <BrowserRouter>
             <Navbar
                 isTopOfPage={isTopOfPage}
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
             />
-            <Home setSelectedPage={setSelectedPage} />
-            <Services setSelectedPage={setSelectedPage} />
-        </div>
+            <Routes>
+                <Route path="/" element={
+                    <div>
+                        <Home setSelectedPage={setSelectedPage} />
+                        <Services setSelectedPage={setSelectedPage} />
+                    </div>
+                } />
+
+                <Route path="/services" element={
+                    <Services setSelectedPage={setSelectedPage} />
+                }
+                />
+
+                <Route path="/faq" element={
+                    <FAQ />
+                }
+
+                />
+
+                <Route path="/contact" element={
+                    <Contact />
+                } />
+
+            </Routes>
+            <Footer />
+        </BrowserRouter>
     );
 }
 

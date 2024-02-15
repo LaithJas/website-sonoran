@@ -5,6 +5,7 @@ import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useState } from "react";
 import CustomLink from "@/shared/CustomLink";
+import RouteLink from "@/shared/RouteLink";
 
 type Props = {
     isTopOfPage: boolean;
@@ -32,23 +33,20 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                             <div className={`${flexBetween} w-full`}>
 
                                 <div className={`${flexBetween} gap-8 text-md`}>
-                                    <Link
-                                        page="Home"
-                                        selectedPage={selectedPage}
-                                        setSelectedPage={setSelectedPage}
-                                    />
-                                    <Link
-                                        page="Services"
-                                        selectedPage={selectedPage}
-                                        setSelectedPage={setSelectedPage} />
-                                    <Link
-                                        page="FAQ"
-                                        selectedPage={selectedPage}
-                                        setSelectedPage={setSelectedPage} />
-                                    <Link
-                                        page="Contac Us"
-                                        selectedPage={selectedPage}
-                                        setSelectedPage={setSelectedPage} />
+                                    <RouteLink page="">
+                                        Home
+                                    </RouteLink>
+                                    <RouteLink page="Services">
+                                        Services
+                                    </RouteLink>
+                                    <RouteLink page="faq">
+                                        FAQ
+                                    </RouteLink>
+                                    <RouteLink
+                                        page="Contact Us"
+                                    >
+                                        Contact Us
+                                    </RouteLink>
                                 </div>
 
                                 <div className={`${flexBetween} gap-8`}>
@@ -80,23 +78,20 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                     </div>
 
                     <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-                        <Link
-                            page="Home"
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage}
-                        />
-                        <Link
-                            page="Services"
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage} />
-                        <Link
-                            page="FAQ"
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage} />
-                        <Link
-                            page="Contac Us"
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage} />
+                        <RouteLink page="">
+                            Home
+                        </RouteLink>
+                        <RouteLink page="Services">
+                            Services
+                        </RouteLink>
+                        <RouteLink page="faq">
+                            FAQ
+                        </RouteLink>
+                        <RouteLink
+                            page="Contact Us"
+                        >
+                            Contact Us
+                        </RouteLink>
                     </div>
 
                 </div>
