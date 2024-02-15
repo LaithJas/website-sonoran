@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Service from "./Service";
+import RouteLink from "@/shared/RouteLink";
 
 const services: Array<BenefitType> = [
     {
@@ -147,9 +148,9 @@ const Services = ({ setSelectedPage }: Props) => {
                             {/* BUTTON */}
                             <div className="relative mt-16">
                                 <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
-                                    <ActionButton setSelectedPage={setSelectedPage}>
+                                    <RouteLink page="Services" isButton={true}>
                                         View Services
-                                    </ActionButton>
+                                    </RouteLink>
                                 </div>
                             </div>
                         </div>

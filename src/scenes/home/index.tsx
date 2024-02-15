@@ -1,5 +1,4 @@
 import { SelectedPage } from "@/shared/types";
-import ActionButton from "@/shared/ActionButton";
 import HomePageText from "@/assets/SonoranText.png";
 import HomePageGraphic from "@/assets/carHomeDesign.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -65,17 +64,10 @@ const Home = ({ setSelectedPage }: Props) => {
                             visible: { opacity: 1, x: 0 },
                         }}
                     >
-                        <ActionButton setSelectedPage={setSelectedPage}>
+                        <RouteLink page="Services" isButton={true} >
                             Our Services
-                        </ActionButton>
+                        </RouteLink>
 
-                        <AnchorLink
-                            className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-                            onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-                            href={`#${SelectedPage.ContactUs}`}
-                        >
-                            <p>Learn More</p>
-                        </AnchorLink>
                     </motion.div>
                 </div>
 
