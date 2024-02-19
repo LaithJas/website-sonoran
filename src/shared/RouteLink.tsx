@@ -5,6 +5,7 @@ type Props = {
     children: React.ReactNode;
     page: string;
     isButton?: boolean;
+    onClick?: () => void;
 }
 
 /*
@@ -14,14 +15,15 @@ type Props = {
  * TODO: This might need to be changed to indlue any route not just things from types.ts
  */
 
-function RouteLink({ page, children, isButton }: Props) {
+function RouteLink({ page, children, isButton, onClick }: Props) {
     const lowerCasePage = page.toLowerCase().replace(/ /g, "") as SelectedPage;
     return (
         <>
             {isButton ? (
                 <Link
                     className="rounded-md bg-secondary-500 text-white px-10 py-2 hover:bg-gray-700 hover:text-black"
-                    to={"/" + lowerCasePage}>
+                    to={"/" + lowerCasePage}
+                    onClick={onClick}>
                     {children}
                 </Link>
             ) :
@@ -29,6 +31,7 @@ function RouteLink({ page, children, isButton }: Props) {
                     <Link
                         to={"/" + lowerCasePage}
                         className="text-secondary-500 transition duration-500 hover:text-secondary-500"
+                        onClick={onClick}
                     >
                         {children}
                     </Link>

@@ -50,7 +50,7 @@ function App() {
 
                 />
 
-                <Route path="/contact" element={
+                <Route path="/contactus" element={
                     <Contact />
                 } />
 

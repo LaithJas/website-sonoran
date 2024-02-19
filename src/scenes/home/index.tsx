@@ -8,7 +8,7 @@ import RouteLink from "@/shared/RouteLink";
 type Props = {
     setSelectedPage: (value: SelectedPage) => void;
 };
-
+//TODO: adding a map at the bottom of the home page, under services
 const Home = ({ setSelectedPage }: Props) => {
 
     return (

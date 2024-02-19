@@ -34,54 +34,48 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                             <div className={`${flexBetween} w-full`}>
 
                                 <div className={`${flexBetween} gap-8 text-md`}>
-                                    <RouteLink page="">
-                                        Home
-                                    </RouteLink>
+                                    <RouteLink page=""> Home </RouteLink>
+
                                     <RouteLink page="Services">
                                         Services
                                         <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
-                                            <ChevronDownIcon className="h-4 w-6" />
+                                            <ChevronDownIcon className="h-4 w-6" onClick={(e) => e.preventDefault()} />
                                         </button>
-                                        <div>
-                                            {/*
-                                                TODO: make the dropdown window disappear when you click a link (chekc chatGPT: Tailwind css margin and | for more info )
-                                                TODO: Deal with dropdown window disappearing when scrolling (either untoggle the dropdown or fix it)
+                                        <div className="relative">
+                                            <div>
+                                                {/*
                                                 TODO: check same GPT page to do the multipage Services functionality
-                                                TODO: fix FAQ page where the footer is getting mixed with the page
                                             */}
-                                            {isDropDownToggled && (
-                                                <div className={`${navbarBackground} fixed z-auto h-[40%] w-1/3 bg-gray-700 drop-shadow-xl rounded-xl`}>
+                                                {isDropDownToggled && (
+                                                    <div className={`${navbarBackground} absolute pb-4 py-2 mt-2 whitespace-nowrap bg-white drop-shadow-xl rounded-xl`}>
 
-                                                    <div className="flex justify-end p-4">
-                                                        <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
-                                                            <XMarkIcon className="h-6 w-6 text-white" />
-                                                        </button>
+                                                        <div className="flex justify-end p-4">
+                                                            <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
+                                                                <XMarkIcon className="h-6 w-6" onClick={(e) => e.preventDefault()} />
+                                                            </button>
+                                                        </div>
+
+                                                        <div className="ml-[10%] mt-[5%] flex flex-col gap-4 pr-10">
+                                                            <RouteLink page="" onClick={() => setIsDropDownToggled(false)}>
+                                                                Title Transfer
+                                                            </RouteLink>
+                                                            <RouteLink page="Services" onClick={() => setIsDropDownToggled(false)}>
+                                                                Renew Registration
+                                                            </RouteLink>
+                                                            <RouteLink page="faq" onClick={() => setIsDropDownToggled(false)}>
+                                                                MVR
+                                                            </RouteLink>
+                                                        </div>
                                                     </div>
 
-                                                    <div className="ml-[10%] mt-[5%] flex flex-col gap-5 ">
-                                                        <RouteLink page="">
-                                                            Title Transfer:
-                                                        </RouteLink>
-                                                        <RouteLink page="Services">
-                                                            Renew Registration
-                                                        </RouteLink>
-                                                        <RouteLink page="faq">
-                                                            MVR
-                                                        </RouteLink>
-                                                    </div>
-                                                </div>
-
-                                            )}
+                                                )}
+                                            </div>
                                         </div>
                                     </RouteLink>
-                                    <RouteLink page="faq">
-                                        FAQ
-                                    </RouteLink>
-                                    <RouteLink
-                                        page="Contact Us"
-                                    >
-                                        Contact Us
-                                    </RouteLink>
+
+                                    <RouteLink page="faq"> FAQ </RouteLink>
+
+                                    <RouteLink page="Contact Us" > Contact Us </RouteLink>
                                 </div>
 
                                 <div className={`${flexBetween} gap-8`}>
@@ -119,6 +113,35 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                             </RouteLink>
                             <RouteLink page="Services">
                                 Services
+
+                                <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
+                                    <ChevronDownIcon className="h-4 w-6" onClick={(e) => e.preventDefault()} />
+                                </button>
+                                <div>
+                                    {isDropDownToggled && (
+                                        <div className={`${navbarBackground} fixed z-auto h-[40%] w-auto bg-white drop-shadow-xl rounded-xl`}>
+
+                                            <div className="flex justify-end p-4">
+                                                <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
+                                                    <XMarkIcon className="h-6 w-6 text-black" onClick={(e) => e.preventDefault()} />
+                                                </button>
+                                            </div>
+
+                                            <div className="ml-[10%] mt-[5%] flex flex-col gap-5 ">
+                                                <RouteLink page="" onClick={() => setIsDropDownToggled(false)}>
+                                                    Title Transfer
+                                                </RouteLink>
+                                                <RouteLink page="Services" onClick={() => setIsDropDownToggled(false)}>
+                                                    Renew Registration
+                                                </RouteLink>
+                                                <RouteLink page="faq" onClick={() => setIsDropDownToggled(false)}>
+                                                    MVR
+                                                </RouteLink>
+                                            </div>
+                                        </div>
+
+                                    )}
+                                </div>
                             </RouteLink>
                             <RouteLink page="faq">
                                 FAQ

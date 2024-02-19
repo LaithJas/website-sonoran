@@ -3,7 +3,7 @@ import Logo from "@/assets/icon2_son.png";
 //TODO: make the footer at the bottom of the page, alwyas even if there is no content on the page
 const Footer = () => {
     return (
-        <footer className="bg-gray-700 py-12">
+        <footer className=" pt-10 bg-gray-700 py-12 ">
             <div className="justify-content mx-auto w-5/6 gap-16 md:flex">
                 <div className="mt-16 basis-1/2 md:mt-0">
                     <img alt="logo" src={Logo} />
