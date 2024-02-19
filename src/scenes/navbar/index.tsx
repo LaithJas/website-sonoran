@@ -1,10 +1,11 @@
 import Logo from "@/assets/icon2_son.png";
 import Link from "./Link";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { Bars3Icon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useState } from "react";
 import CustomLink from "@/shared/CustomLink";
+import RouteLink from "@/shared/RouteLink";
 
 type Props = {
     isTopOfPage: boolean;
@@ -15,6 +16,7 @@ type Props = {
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
     const flexBetween = "flex items-center justify-between";
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
+    const [isDropDownToggled, setIsDropDownToggled] = useState<boolean>(false);
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
     const navbarBackground = isTopOfPage ? "" : "bg-gray-20 drop-shadow"
 
@@ -32,23 +34,48 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                             <div className={`${flexBetween} w-full`}>
 
                                 <div className={`${flexBetween} gap-8 text-md`}>
-                                    <Link
-                                        page="Home"
-                                        selectedPage={selectedPage}
-                                        setSelectedPage={setSelectedPage}
-                                    />
-                                    <Link
-                                        page="Services"
-                                        selectedPage={selectedPage}
-                                        setSelectedPage={setSelectedPage} />
-                                    <Link
-                                        page="FAQ"
-                                        selectedPage={selectedPage}
-                                        setSelectedPage={setSelectedPage} />
-                                    <Link
-                                        page="Contac Us"
-                                        selectedPage={selectedPage}
-                                        setSelectedPage={setSelectedPage} />
+                                    <RouteLink page=""> Home </RouteLink>
+
+                                    <RouteLink page="Services">
+                                        Services
+                                        <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
+                                            <ChevronDownIcon className="h-4 w-6" onClick={(e) => e.preventDefault()} />
+                                        </button>
+                                        <div className="relative">
+                                            <div>
+                                                {/*
+                                                TODO: check same GPT page to do the multipage Services functionality
+                                            */}
+                                                {isDropDownToggled && (
+                                                    <div className={`${navbarBackground} absolute pb-4 py-2 mt-2 whitespace-nowrap bg-white drop-shadow-xl rounded-xl`}>
+
+                                                        <div className="flex justify-end p-4">
+                                                            <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
+                                                                <XMarkIcon className="h-6 w-6" onClick={(e) => e.preventDefault()} />
+                                                            </button>
+                                                        </div>
+
+                                                        <div className="ml-[10%] mt-[5%] flex flex-col gap-4 pr-10">
+                                                            <RouteLink page="" onClick={() => setIsDropDownToggled(false)}>
+                                                                Title Transfer
+                                                            </RouteLink>
+                                                            <RouteLink page="Services" onClick={() => setIsDropDownToggled(false)}>
+                                                                Renew Registration
+                                                            </RouteLink>
+                                                            <RouteLink page="faq" onClick={() => setIsDropDownToggled(false)}>
+                                                                MVR
+                                                            </RouteLink>
+                                                        </div>
+                                                    </div>
+
+                                                )}
+                                            </div>
+                                        </div>
+                                    </RouteLink>
+
+                                    <RouteLink page="faq"> FAQ </RouteLink>
+
+                                    <RouteLink page="Contact Us" > Contact Us </RouteLink>
                                 </div>
 
                                 <div className={`${flexBetween} gap-8`}>
@@ -67,40 +94,68 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                             )}
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/*Mobel Menu Modal*/}
-            {!isAboveMediumScreens && isMenuToggled && (
-                <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-gray-700 drop-shadow-xl">
-                    {/*Close Icon*/}
-                    <div className="flex justify-end p-12">
-                        <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-                            <XMarkIcon className="h-6 w-6 text-gray-400" />
-                        </button>
-                    </div>
+            {
+                !isAboveMediumScreens && isMenuToggled && (
+                    <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-gray-700 drop-shadow-xl">
+                        {/*Close Icon*/}
+                        <div className="flex justify-end p-12">
+                            <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+                                <XMarkIcon className="h-6 w-6 text-gray-400" />
+                            </button>
+                        </div>
 
-                    <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-                        <Link
-                            page="Home"
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage}
-                        />
-                        <Link
-                            page="Services"
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage} />
-                        <Link
-                            page="FAQ"
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage} />
-                        <Link
-                            page="Contac Us"
-                            selectedPage={selectedPage}
-                            setSelectedPage={setSelectedPage} />
-                    </div>
+                        <div className="ml-[33%] flex flex-col gap-10 text-2xl">
+                            <RouteLink page="">
+                                Home
+                            </RouteLink>
+                            <RouteLink page="Services">
+                                Services
 
-                </div>
-            )}
+                                <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
+                                    <ChevronDownIcon className="h-4 w-6" onClick={(e) => e.preventDefault()} />
+                                </button>
+                                <div>
+                                    {isDropDownToggled && (
+                                        <div className={`${navbarBackground} fixed z-auto h-[40%] w-auto bg-white drop-shadow-xl rounded-xl`}>
+
+                                            <div className="flex justify-end p-4">
+                                                <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
+                                                    <XMarkIcon className="h-6 w-6 text-black" onClick={(e) => e.preventDefault()} />
+                                                </button>
+                                            </div>
+
+                                            <div className="ml-[10%] mt-[5%] flex flex-col gap-5 ">
+                                                <RouteLink page="" onClick={() => setIsDropDownToggled(false)}>
+                                                    Title Transfer
+                                                </RouteLink>
+                                                <RouteLink page="Services" onClick={() => setIsDropDownToggled(false)}>
+                                                    Renew Registration
+                                                </RouteLink>
+                                                <RouteLink page="faq" onClick={() => setIsDropDownToggled(false)}>
+                                                    MVR
+                                                </RouteLink>
+                                            </div>
+                                        </div>
+
+                                    )}
+                                </div>
+                            </RouteLink>
+                            <RouteLink page="faq">
+                                FAQ
+                            </RouteLink>
+                            <RouteLink
+                                page="Contact Us"
+                            >
+                                Contact Us
+                            </RouteLink>
+                        </div>
+
+                    </div>
+                )
+            }
         </nav >
     );
 };

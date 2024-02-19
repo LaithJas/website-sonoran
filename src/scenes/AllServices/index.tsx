@@ -1,4 +1,3 @@
-import ActionButton from "@/shared/ActionButton";
 import HText from "@/shared/HText";
 import { BenefitType, SelectedPage } from "@/shared/types";
 import {
@@ -7,7 +6,7 @@ import {
     BuildingOfficeIcon,
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import Service from "./Service";
+import Service from "../services";
 import RouteLink from "@/shared/RouteLink";
 
 const services: Array<BenefitType> = [
@@ -42,7 +41,7 @@ type Props = {
     setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Services = ({ setSelectedPage }: Props) => {
+const AllServices = ({ setSelectedPage }: Props) => {
     return (
         <section id="services" className="w-full bg-gray-20">
             <motion.div

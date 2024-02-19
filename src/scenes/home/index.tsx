@@ -1,17 +1,15 @@
-import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
-import ActionButton from "@/shared/ActionButton";
 import HomePageText from "@/assets/SonoranText.png";
 import HomePageGraphic from "@/assets/carNoBkHomeDesign.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
+import RouteLink from "@/shared/RouteLink";
 
 type Props = {
     setSelectedPage: (value: SelectedPage) => void;
 };
-
+//TODO: adding a map at the bottom of the home page, under services
 const Home = ({ setSelectedPage }: Props) => {
-    const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
 
     return (
         <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
@@ -66,16 +64,10 @@ const Home = ({ setSelectedPage }: Props) => {
                             visible: { opacity: 1, x: 0 },
                         }}
                     >
-                        <ActionButton setSelectedPage={setSelectedPage}>
+                        <RouteLink page="Services" isButton={true} >
                             Our Services
-                        </ActionButton>
-                        <AnchorLink
-                            className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-                            onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-                            href={`#${SelectedPage.ContactUs}`}
-                        >
-                            <p>Learn More</p>
-                        </AnchorLink>
+                        </RouteLink>
+
                     </motion.div>
                 </div>
 
@@ -88,15 +80,17 @@ const Home = ({ setSelectedPage }: Props) => {
                 </div>
             </motion.div>
 
-            {/* SPONSORS */}
+            {/* SPONSORS 
             {isAboveMediumScreens && (
-                <div className="h-[150px] w-full bg-gray-20 py-10">
+                <div className="h-[150px] w-full bg-gray-20 ">
                     <div className="mx-auto w-5/6">
-                        <div className="flex w-3/5 items-center justify-between gap-8">
+                        <div className="flex items-center justify-between gap-8">
+                            <img alt="Tumble-Weed" src={TumbleWeed} />
+                            <img alt="Tumble-Weed55" src={TWRotate55} />
                         </div>
                     </div>
                 </div>
-            )}
+            )}*/}
         </section>
     );
 };
