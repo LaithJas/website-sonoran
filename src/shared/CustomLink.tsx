@@ -12,8 +12,7 @@ const CustomLink = ({ children, url }: Props) => {
 
     return (
         <a
-            className="rounded-md bg-secondary-500 text-white px-10 py-2 hover:bg-primary-700 hover:text-black"
-            href={url}
+            className="rounded-md bg-secondary-500 text-white px-10 py-2 hover:bg-gray-700 hover:text-black"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleLinkClick}
