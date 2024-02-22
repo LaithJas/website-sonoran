@@ -1,0 +1,29 @@
+import React from 'react';
+import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
+
+const MapContainer: React.FC = () => {
+    // Define your desired location coordinates
+    const desiredLocation = { lat: 33.412590, lng: -111.873930 }; // Example coordinates for New York City
+
+    return (
+        <LoadScript
+            googleMapsApiKey="AIzaSyAaa1q_aPa90Lno-CvozJq4GWmKBLcLFAI"
+        >
+            <GoogleMap
+                center={desiredLocation}
+                zoom={19}
+                mapContainerStyle={{ height: '400px', width: '100%' }}
+            >
+                {/* Add a marker at the desired location with a red pin icon */}
+                <Marker
+                    position={desiredLocation}
+                    icon={{
+                        url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png', // URL for the built-in red pin icon
+                    }}
+                />
+            </GoogleMap>
+        </LoadScript>
+    );
+};
+
+export default MapContainer;

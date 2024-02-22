@@ -1,12 +1,14 @@
 import Navbar from "@/scenes/navbar";
 import Home from "@/scenes/home"
 import Services from "@/scenes/services";
+import AllServices from "@/scenes/AllServices";
 import FAQ from "@/scenes/faq";
-import Contact from "./scenes/contact";
+import Pricing from "./scenes/pricing/index.tsx";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./scenes/footer";
+import MapComponent from "./scenes/map/MapComponent.tsx";
 
 function App() {
     const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
@@ -36,11 +38,12 @@ function App() {
                     <div>
                         <Home setSelectedPage={setSelectedPage} />
                         <Services setSelectedPage={setSelectedPage} />
+                        <MapComponent />
                     </div>
                 } />
 
-                <Route path="/services" element={
-                    <Services setSelectedPage={setSelectedPage} />
+                <Route path="/allservices" element={
+                    <AllServices setSelectedPage={setSelectedPage} />
                 }
                 />
 
@@ -50,8 +53,8 @@ function App() {
 
                 />
 
-                <Route path="/contactus" element={
-                    <Contact />
+                <Route path="/pricing" element={
+                    <Pricing />
                 } />
 
             </Routes>

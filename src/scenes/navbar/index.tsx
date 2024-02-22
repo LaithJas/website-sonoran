@@ -1,5 +1,4 @@
-import Logo from "@/assets/icon2_son.png";
-import Link from "./Link";
+import Logo from "@/assets/icon3.png";
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
@@ -13,7 +12,7 @@ type Props = {
     setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ isTopOfPage }: Props) => {
     const flexBetween = "flex items-center justify-between";
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
     const [isDropDownToggled, setIsDropDownToggled] = useState<boolean>(false);
@@ -36,16 +35,13 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                                 <div className={`${flexBetween} gap-8 text-md`}>
                                     <RouteLink page=""> Home </RouteLink>
 
-                                    <RouteLink page="Services">
+                                    <RouteLink page="AllServices">
                                         Services
                                         <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
                                             <ChevronDownIcon className="h-4 w-6" onClick={(e) => e.preventDefault()} />
                                         </button>
                                         <div className="relative">
                                             <div>
-                                                {/*
-                                                TODO: check same GPT page to do the multipage Services functionality
-                                            */}
                                                 {isDropDownToggled && (
                                                     <div className={`${navbarBackground} absolute pb-4 py-2 mt-2 whitespace-nowrap bg-white drop-shadow-xl rounded-xl`}>
 
@@ -75,7 +71,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
                                     <RouteLink page="faq"> FAQ </RouteLink>
 
-                                    <RouteLink page="Contact Us" > Contact Us </RouteLink>
+                                    <RouteLink page="Pricing" > Pricing </RouteLink>
                                 </div>
 
                                 <div className={`${flexBetween} gap-8`}>
@@ -147,9 +143,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                                 FAQ
                             </RouteLink>
                             <RouteLink
-                                page="Contact Us"
+                                page="Pricing"
                             >
-                                Contact Us
+                                Pricing
                             </RouteLink>
                         </div>
 
