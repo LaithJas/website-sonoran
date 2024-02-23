@@ -64,7 +64,7 @@ const Home = ({ setSelectedPage }: Props) => {
                             visible: { opacity: 1, x: 0 },
                         }}
                     >
-                        <RouteLink page="Services" isButton={true} >
+                        <RouteLink page="AllServices" isButton={true} >
                             Our Services
                         </RouteLink>
 

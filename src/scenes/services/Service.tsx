@@ -22,7 +22,7 @@ const Service = ({ icon, title, description, setSelectedPage }: Props) => {
             style={{ minWidth: "300px", minHeight: "350px" }}
         >
             <div className="mb-4 flex justify-center">
-                <div className="rounded-full border-2 border-gray-700 bg-primary-100 p-4">
+                <div className="rounded-full border-2 border-blue-200 bg-primary-100 p-4">
                     {icon}
                 </div>
             </div>
@@ -30,7 +30,7 @@ const Service = ({ icon, title, description, setSelectedPage }: Props) => {
             <h4 className="font-bold">{title}</h4>
             <p className="my-3">{description}</p>
             <AnchorLink
-                className="text-sm font-bold text-gray-700 underline hover:text-secondary-200"
+                className="text-sm font-bold text-gray-700 underline hover:text-secondary-500"
                 onClick={() => setSelectedPage(SelectedPage.ContactUs)}
                 href={`#${SelectedPage.ContactUs}`}
             >

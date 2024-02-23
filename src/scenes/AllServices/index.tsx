@@ -1,14 +1,21 @@
 import HText from "@/shared/HText";
 import { BenefitType, SelectedPage } from "@/shared/types";
 import {
-    ClipboardDocumentListIcon, TruckIcon, BuildingOfficeIcon
+    TruckIcon,
+    KeyIcon,
+    HandThumbUpIcon,
+    DocumentIcon,
+    BriefcaseIcon,
+    EyeIcon,
+    CalendarDaysIcon,
+    CreditCardIcon
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Service from "../services/Service";
 
 const services: Array<BenefitType> = [
     {
-        icon: <ClipboardDocumentListIcon className="h-6 w-6" />,
+        icon: <KeyIcon className="h-6 w-6" />,
         title: "Title Transfer",
         description:
             "If you are buying or selling a car, we can help you Transfer the title from/to your name.",
@@ -20,19 +27,45 @@ const services: Array<BenefitType> = [
             "We will renew your vehicle regestration, so you are legal on the road",
     },
     {
-        icon: <BuildingOfficeIcon className="h-6 w-6" />,
+        icon: <CalendarDaysIcon className="h-6 w-6" />,
+        title: "Permits",
+        description:
+            "3 Days and 30 Days Permits",
+    },
+    {
+        icon: <DocumentIcon className="h-6 w-6" />,
+        title: "Motor Vehicle Records",
+        description:
+            "Any Certified or Uncertified MVR, From 39 Months to 10 Years.",
+    },
+];
+
+const services2: Array<BenefitType> = [
+    {
+        icon: <HandThumbUpIcon className="h-6 w-6" />,
+        title: "Placards",
+        description:
+            "We Issue Temporary and Permanent Placards.",
+    },
+    {
+        icon: <EyeIcon className="h-6 w-6" />,
+        title: "Vehicle Insection",
+        description:
+            "Our Certified Processors Can Help You With Your Level I Inspection",
+    },
+    {
+        icon: <BriefcaseIcon className="h-6 w-6" />,
         title: "Dealer's Services",
         description:
             "Are you a Car Dealer and looking for competitive prices?",
     },
     {
-        icon: <BuildingOfficeIcon className="h-6 w-6" />,
-        title: "Dealer's Services",
+        icon: <CreditCardIcon className="h-6 w-6" />,
+        title: "Plate Services",
         description:
-            "Are you a Car Dealer and looking for competitive prices?",
+            "Reinstating Plates, Resending Plates, Tab Replacement, and  Sold Notices",
     },
 ];
-
 const container = {
     hidden: {},
     visible: {
@@ -91,7 +124,7 @@ const AllServices = ({ setSelectedPage }: Props) => {
                         viewport={{ once: true, amount: 0.5 }}
                         variants={container}
                     >
-                        {services.map((service: BenefitType) => (
+                        {services2.map((service: BenefitType) => (
                             <Service
                                 key={service.title}
                                 icon={service.icon}

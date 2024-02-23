@@ -107,7 +107,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
                             <RouteLink page="">
                                 Home
                             </RouteLink>
-                            <RouteLink page="Services">
+                            <RouteLink page="AllServices">
                                 Services
 
                                 <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>

@@ -147,7 +147,7 @@ const Services = ({ setSelectedPage }: Props) => {
                             {/* BUTTON */}
                             <div className="relative mt-16">
                                 <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
-                                    <RouteLink page="Services" isButton={true}>
+                                    <RouteLink page="AllServices" isButton={true}>
                                         View Services
                                     </RouteLink>
                                 </div>
