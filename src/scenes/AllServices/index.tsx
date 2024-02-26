@@ -104,7 +104,7 @@ const AllServices = ({ setSelectedPage }: Props) => {
                         className="mt-5 items-center justify-between gap-8 md:flex"
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.3 }}
                         variants={container}
                     >
                         {services.map((service: BenefitType) => (

@@ -104,10 +104,10 @@ const Navbar = ({ isTopOfPage }: Props) => {
                         </div>
 
                         <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-                            <RouteLink page="">
+                            <RouteLink page="" onClick={() => setIsMenuToggled(false)}>
                                 Home
                             </RouteLink>
-                            <RouteLink page="AllServices">
+                            <RouteLink page="AllServices" onClick={() => setIsMenuToggled(false)}>
                                 Services
 
                                 <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
@@ -139,12 +139,10 @@ const Navbar = ({ isTopOfPage }: Props) => {
                                     )}
                                 </div>
                             </RouteLink>
-                            <RouteLink page="faq">
+                            <RouteLink page="faq" onClick={() => setIsMenuToggled(false)}>
                                 FAQ
                             </RouteLink>
-                            <RouteLink
-                                page="Pricing"
-                            >
+                            <RouteLink page="Pricing" onClick={() => setIsMenuToggled(false)}>
                                 Pricing
                             </RouteLink>
                         </div>
