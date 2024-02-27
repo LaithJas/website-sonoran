@@ -9,6 +9,7 @@ import { SelectedPage } from "@/shared/types";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./scenes/footer";
 import MapComponent from "./scenes/map/MapComponent.tsx";
+import TandR from "./scenes/AllServices/TandR.tsx";
 
 function App() {
     const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
@@ -44,17 +45,18 @@ function App() {
 
                 <Route path="/allservices" element={
                     <AllServices setSelectedPage={setSelectedPage} />
-                }
-                />
+                } />
 
                 <Route path="/faq" element={
                     <FAQ />
-                }
-
-                />
+                } />
 
                 <Route path="/pricing" element={
                     <Pricing />
+                } />
+
+                <Route path="/TandR" element={
+                    <TandR />
                 } />
 
             </Routes>

@@ -1,7 +1,6 @@
 import { SelectedPage } from "@/shared/types";
 import HomePageText from "@/assets/SonoranText.png";
 import HomePageGraphic from "@/assets/carNoBkHomeDesign.png";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 import RouteLink from "@/shared/RouteLink";
 
@@ -41,14 +40,7 @@ const Home = ({ setSelectedPage }: Props) => {
                         <p className="mt-8 text-sm">
                             At Sonoran Tag and Title, We Specialize in Simplifying Your Vehicle-related Processes.
                             We offer Title Transfer, Registration Renewal, Plates and Tags Replacement, Duplicate Titles, Public Notray
-                            Permits, and{' '}
-                            <AnchorLink
-                                className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-                                onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-                                href={`#${SelectedPage.ContactUs}`}
-                            >
-                                more.
-                            </AnchorLink>
+                            Permits, and more.
                         </p>
                     </motion.div>
 

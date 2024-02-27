@@ -16,12 +16,12 @@ const Footer = () => {
                     <p className="my-2">Monday - Friday: 9:00  AM - 6:00 PM</p>
                     <p className="my-2">    Saturdays  : 10:00 AM - 3:30 PM</p>
                     <p className="my-2">    Sundays    : CLOSED</p>
-                    <p className="my-2">May be Different During Holidays</p>
                 </div>
                 <div className="mt-16 basis-1/4 md:mt-0">
                     <h4 className="font-bold">Contact Us</h4>
                     <p className="my-4">sonorantags6129@gmail.com</p>
-                    <a href="tel:(480) 905-0414">(480) 905-0414</a>
+                    <a href="tel:(480) 905-0414">Phone: (480) 905-0414</a>
+                    <p className="my-2">Address: 111 S Dobson Rd Suite 101, Mesa, AZ 85202</p>
                 </div>
             </div>
         </footer>

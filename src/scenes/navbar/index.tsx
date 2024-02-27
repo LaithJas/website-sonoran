@@ -75,6 +75,7 @@ const Navbar = ({ isTopOfPage }: Props) => {
                                 </div>
 
                                 <div className={`${flexBetween} gap-8`}>
+                                    <CustomLink url="https://www.google.com/maps/dir//111+S+Dobson+Rd+Suite+101,+Mesa,+AZ+85202/@33.4128298,-111.9562415,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x872b07f5d72d849b:0xa23a16029740fb12!2m2!1d-111.8738489!2d33.412857?entry=ttu">Directions</CustomLink>
                                     <CustomLink url="https://azdot.gov/mvd" >ADOT</CustomLink>
                                 </div>
 
@@ -145,6 +146,8 @@ const Navbar = ({ isTopOfPage }: Props) => {
                             <RouteLink page="Pricing" onClick={() => setIsMenuToggled(false)}>
                                 Pricing
                             </RouteLink>
+                            <CustomLink classNameOverride="text-secondary-500 transition duration-500 hover:text-secondary-500" url="https://www.google.com/maps/dir//111+S+Dobson+Rd+Suite+101,+Mesa,+AZ+85202/@33.4128298,-111.9562415,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x872b07f5d72d849b:0xa23a16029740fb12!2m2!1d-111.8738489!2d33.412857?entry=ttu">Directions</CustomLink>
+                            <a href="tel:(480) 905-0414">Phone: (480) 905-0414</a>
                         </div>
 
                     </div>

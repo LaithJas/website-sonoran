@@ -1,6 +1,6 @@
+import RouteLink from "@/shared/RouteLink";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const childVariant = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -11,10 +11,11 @@ type Props = {
     icon: JSX.Element;
     title: string;
     description: string;
+    link?: string;
     setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Service = ({ icon, title, description, setSelectedPage }: Props) => {
+const Service = ({ icon, title, description, link }: Props) => {
     return (
         <motion.div
             variants={childVariant}
@@ -26,9 +27,22 @@ const Service = ({ icon, title, description, setSelectedPage }: Props) => {
                     {icon}
                 </div>
             </div>
-
             <h4 className="font-bold">{title}</h4>
             <p className="my-3">{description}</p>
+            <RouteLink
+                classNameOverride="text-sm font-bold text-gray-700 underline hover:text-secondary-500"
+                page={link ? link : ""}
+                isButton={false}>
+                Learn More
+            </RouteLink>
+        </motion.div>
+    );
+};
+
+export default Service;
+
+
+/*
             <AnchorLink
                 className="text-sm font-bold text-gray-700 underline hover:text-secondary-500"
                 onClick={() => setSelectedPage(SelectedPage.ContactUs)}
@@ -36,8 +50,5 @@ const Service = ({ icon, title, description, setSelectedPage }: Props) => {
             >
                 <p>Learn More</p>
             </AnchorLink>
-        </motion.div>
-    );
-};
-
-export default Service;
+                        className={classNameOverride === "" ? "text-secondary-500 transition duration-500 hover:text-secondary-500" : { classNameOverride }}
+*/

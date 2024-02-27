@@ -15,6 +15,7 @@ const services: Array<BenefitType> = [
         title: "Title Transfer",
         description:
             "If you are buying or selling a car, we can help you Transfer the title from/to your name.",
+        link: "TandR"
     },
     {
         icon: <TruckIcon className="h-6 w-6" />,
@@ -80,6 +81,7 @@ const Services = ({ setSelectedPage }: Props) => {
                                 icon={benefit.icon}
                                 title={benefit.title}
                                 description={benefit.description}
+                                link={benefit.link}
                                 setSelectedPage={setSelectedPage}
                             />
                         ))}
@@ -98,7 +100,7 @@ const Services = ({ setSelectedPage }: Props) => {
                         <div>
                             {/* TITLE */}
                             <div className="relative">
-                                <div className="before:absolute before:-top-28 before:-left-20 before:z-[1] before:content-abstractwaves">
+                                <div className="before:absolute before:-top-28 before:-left-20 before:z-[1]">
                                     <motion.div
                                         initial="hidden"
                                         whileInView="visible"
