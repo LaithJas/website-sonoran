@@ -3,7 +3,6 @@ import Home from "@/scenes/home"
 import Services from "@/scenes/services";
 import AllServices from "@/scenes/AllServices";
 import FAQ from "@/scenes/faq";
-import Pricing from "./scenes/pricing/index.tsx";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -49,10 +48,6 @@ function App() {
 
                 <Route path="/faq" element={
                     <FAQ />
-                } />
-
-                <Route path="/pricing" element={
-                    <Pricing />
                 } />
 
                 <Route path="/TandR" element={

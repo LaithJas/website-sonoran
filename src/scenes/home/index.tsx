@@ -38,9 +38,7 @@ const Home = ({ setSelectedPage }: Props) => {
                         </div>
 
                         <p className="mt-8 text-sm">
-                            At Sonoran Tag and Title, We Specialize in Simplifying Your Vehicle-related Processes.
-                            We offer Title Transfer, Registration Renewal, Plates and Tags Replacement, Duplicate Titles, Public Notray
-                            Permits, and more.
+                            At Sonoran Tag and Title, We Specialize in assisting our customers with their respective motor vehicle Processes while ensuring a high-quality and minimal to no wait time visits. We offer Title Transfers, Registration Renewals, Plate and Tag Replacements, Duplicate Titles, Permits, Notaries and more.
                         </p>
                     </motion.div>
 

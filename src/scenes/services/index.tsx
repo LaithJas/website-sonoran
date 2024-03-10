@@ -14,20 +14,20 @@ const services: Array<BenefitType> = [
         icon: <ClipboardDocumentListIcon className="h-6 w-6" />,
         title: "Title Transfer",
         description:
-            "If you are buying or selling a car, we can help you Transfer the title from/to your name.",
+            "Process that entails a change of ownership for a motor vehicle or trailer",
         link: "TandR"
     },
     {
         icon: <TruckIcon className="h-6 w-6" />,
         title: "Registration Renewal",
         description:
-            "We will renew your vehicle regestration, so you are legal on the road",
+            "Renewing your vehicle registration so you are legal on the road ",
     },
     {
         icon: <BuildingOfficeIcon className="h-6 w-6" />,
         title: "Dealer's Services",
         description:
-            "Are you a Car Dealer and looking for competitive prices?",
+            "Are you a new dealer and feel overwhelmed with all the ADOT required documents? we offer a step-by-step guide on document completion at no additional cost ",
     },
 ];
 

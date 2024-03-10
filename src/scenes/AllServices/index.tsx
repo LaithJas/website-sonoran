@@ -18,13 +18,13 @@ const services: Array<BenefitType> = [
         icon: <KeyIcon className="h-6 w-6" />,
         title: "Title Transfer",
         description:
-            "If you are buying or selling a car, we can help you Transfer the title from/to your name.",
+            "Process that Entails a Change of Ownership for a Motor Vehicle or Trailer",
     },
     {
         icon: <TruckIcon className="h-6 w-6" />,
         title: "Registration Renewal",
         description:
-            "We will renew your vehicle regestration, so you are legal on the road",
+            "Reneww your Vehicle Regestration so you are Legal on the Road",
     },
     {
         icon: <CalendarDaysIcon className="h-6 w-6" />,
@@ -45,7 +45,7 @@ const services2: Array<BenefitType> = [
         icon: <HandThumbUpIcon className="h-6 w-6" />,
         title: "Placards",
         description:
-            "We Issue Temporary and Permanent Placards.",
+            "Issue and Replace Temporary and Permanent Placards.",
     },
     {
         icon: <EyeIcon className="h-6 w-6" />,
