@@ -22,6 +22,7 @@ const services: Array<BenefitType> = [
         title: "Registration Renewal",
         description:
             "Renewing your vehicle registration so you are legal on the road ",
+        link: "reg"
     },
     {
         icon: <BuildingOfficeIcon className="h-6 w-6" />,
@@ -62,7 +63,7 @@ const Services = ({ setSelectedPage }: Props) => {
                         }}
                     >
                         <HText>WE ARE HERE TO HELP.</HText>
-                        <p className="my-5 text-sm text-gray-700">
+                        <p className="my-5 text-md text-gray-700">
                             We Provide variaty of services for Customers and Dealers.
                         </p>
                     </motion.div>

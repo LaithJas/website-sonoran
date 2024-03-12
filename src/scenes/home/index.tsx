@@ -37,7 +37,7 @@ const Home = ({ setSelectedPage }: Props) => {
                             </div>
                         </div>
 
-                        <p className="mt-8 text-sm">
+                        <p className="mt-8 text-md">
                             At Sonoran Tag and Title, We Specialize in assisting our customers with their respective motor vehicle Processes while ensuring a high-quality and minimal to no wait time visits. We offer Title Transfers, Registration Renewals, Plate and Tag Replacements, Duplicate Titles, Permits, Notaries and more.
                         </p>
                     </motion.div>
