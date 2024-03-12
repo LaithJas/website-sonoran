@@ -1,4 +1,3 @@
-import ActionButton from "@/shared/ActionButton";
 import HText from "@/shared/HText";
 import { BenefitType, SelectedPage } from "@/shared/types";
 import {
@@ -15,19 +14,21 @@ const services: Array<BenefitType> = [
         icon: <ClipboardDocumentListIcon className="h-6 w-6" />,
         title: "Title Transfer",
         description:
-            "If you are buying or selling a car, we can help you Transfer the title from/to your name.",
+            "Process that entails a change of ownership for a motor vehicle or trailer",
+        link: "TandR"
     },
     {
         icon: <TruckIcon className="h-6 w-6" />,
         title: "Registration Renewal",
         description:
-            "We will renew your vehicle regestration, so you are legal on the road",
+            "Renewing your vehicle registration so you are legal on the road ",
+        link: "reg"
     },
     {
         icon: <BuildingOfficeIcon className="h-6 w-6" />,
         title: "Dealer's Services",
         description:
-            "Are you a Car Dealer and looking for competitive prices?",
+            "Are you a new dealer and feel overwhelmed with all the ADOT required documents? we offer a step-by-step guide on document completion at no additional cost ",
     },
 ];
 
@@ -54,7 +55,7 @@ const Services = ({ setSelectedPage }: Props) => {
                         className="md:my-5 md:basis-3/5"
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5 }}
                         variants={{
                             hidden: { opacity: 0, x: -50 },
@@ -62,7 +63,7 @@ const Services = ({ setSelectedPage }: Props) => {
                         }}
                     >
                         <HText>WE ARE HERE TO HELP.</HText>
-                        <p className="my-5 text-sm text-gray-700">
+                        <p className="my-5 text-md text-gray-700">
                             We Provide variaty of services for Customers and Dealers.
                         </p>
                     </motion.div>
@@ -81,6 +82,7 @@ const Services = ({ setSelectedPage }: Props) => {
                                 icon={benefit.icon}
                                 title={benefit.title}
                                 description={benefit.description}
+                                link={benefit.link}
                                 setSelectedPage={setSelectedPage}
                             />
                         ))}
@@ -99,7 +101,7 @@ const Services = ({ setSelectedPage }: Props) => {
                         <div>
                             {/* TITLE */}
                             <div className="relative">
-                                <div className="before:absolute before:-top-28 before:-left-20 before:z-[1] before:content-abstractwaves">
+                                <div className="before:absolute before:-top-28 before:-left-20 before:z-[1]">
                                     <motion.div
                                         initial="hidden"
                                         whileInView="visible"
@@ -148,7 +150,7 @@ const Services = ({ setSelectedPage }: Props) => {
                             {/* BUTTON */}
                             <div className="relative mt-16">
                                 <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
-                                    <RouteLink page="Services" isButton={true}>
+                                    <RouteLink page="AllServices" isButton={true}>
                                         View Services
                                     </RouteLink>
                                 </div>

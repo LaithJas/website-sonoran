@@ -1,7 +1,7 @@
 import Item from "./Item";
 const FAQ: React.FC = () => {
     return (
-        <section className="gap-16 bg-gray-20 pt-10 w-full md:pb-12">
+        <section className="gap-16 bg-gray-20 pt-12 w-full md:pb-12">
             <div className="py-10 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                 <h2 className="mb-8 text-4xl tracking-tight font-extrabold">Frequently asked questions</h2>
                 <div className="grid pt-8 text-left border-t border-gray-200  md:gap-16 dark:border-gray-700 md:grid-cols-2">

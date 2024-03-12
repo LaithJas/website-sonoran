@@ -1,5 +1,4 @@
-import Logo from "@/assets/icon2_son.png";
-import Link from "./Link";
+import Logo from "@/assets/icon3.png";
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
@@ -13,7 +12,7 @@ type Props = {
     setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ isTopOfPage }: Props) => {
     const flexBetween = "flex items-center justify-between";
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
     const [isDropDownToggled, setIsDropDownToggled] = useState<boolean>(false);
@@ -36,16 +35,13 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                                 <div className={`${flexBetween} gap-8 text-md`}>
                                     <RouteLink page=""> Home </RouteLink>
 
-                                    <RouteLink page="Services">
+                                    <RouteLink page="AllServices">
                                         Services
                                         <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
                                             <ChevronDownIcon className="h-4 w-6" onClick={(e) => e.preventDefault()} />
                                         </button>
                                         <div className="relative">
                                             <div>
-                                                {/*
-                                                TODO: check same GPT page to do the multipage Services functionality
-                                            */}
                                                 {isDropDownToggled && (
                                                     <div className={`${navbarBackground} absolute pb-4 py-2 mt-2 whitespace-nowrap bg-white drop-shadow-xl rounded-xl`}>
 
@@ -75,10 +71,10 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
                                     <RouteLink page="faq"> FAQ </RouteLink>
 
-                                    <RouteLink page="Contact Us" > Contact Us </RouteLink>
                                 </div>
 
                                 <div className={`${flexBetween} gap-8`}>
+                                    <CustomLink url="https://www.google.com/maps/dir//111+S+Dobson+Rd+Suite+101,+Mesa,+AZ+85202/@33.4128298,-111.9562415,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x872b07f5d72d849b:0xa23a16029740fb12!2m2!1d-111.8738489!2d33.412857?entry=ttu">Directions</CustomLink>
                                     <CustomLink url="https://azdot.gov/mvd" >ADOT</CustomLink>
                                 </div>
 
@@ -108,10 +104,10 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                         </div>
 
                         <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-                            <RouteLink page="">
+                            <RouteLink page="" onClick={() => setIsMenuToggled(false)}>
                                 Home
                             </RouteLink>
-                            <RouteLink page="Services">
+                            <RouteLink page="AllServices" onClick={() => setIsMenuToggled(false)}>
                                 Services
 
                                 <button onClick={() => setIsDropDownToggled(!isDropDownToggled)}>
@@ -143,14 +139,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                                     )}
                                 </div>
                             </RouteLink>
-                            <RouteLink page="faq">
+                            <RouteLink page="faq" onClick={() => setIsMenuToggled(false)}>
                                 FAQ
                             </RouteLink>
-                            <RouteLink
-                                page="Contact Us"
-                            >
-                                Contact Us
-                            </RouteLink>
+                            <CustomLink classNameOverride="text-secondary-500 transition duration-500 hover:text-secondary-500" url="https://www.google.com/maps/dir//111+S+Dobson+Rd+Suite+101,+Mesa,+AZ+85202/@33.4128298,-111.9562415,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x872b07f5d72d849b:0xa23a16029740fb12!2m2!1d-111.8738489!2d33.412857?entry=ttu">Directions</CustomLink>
+                            <a href="tel:(480) 905-0414">Phone: (480) 905-0414</a>
                         </div>
 
                     </div>

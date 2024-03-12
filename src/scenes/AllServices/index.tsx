@@ -1,35 +1,71 @@
 import HText from "@/shared/HText";
 import { BenefitType, SelectedPage } from "@/shared/types";
 import {
-    ClipboardDocumentListIcon,
     TruckIcon,
-    BuildingOfficeIcon,
+    KeyIcon,
+    HandThumbUpIcon,
+    DocumentIcon,
+    BriefcaseIcon,
+    EyeIcon,
+    CalendarDaysIcon,
+    CreditCardIcon
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import Service from "../services";
-import RouteLink from "@/shared/RouteLink";
+import Service from "../services/Service";
 
 const services: Array<BenefitType> = [
     {
-        icon: <ClipboardDocumentListIcon className="h-6 w-6" />,
+        icon: <KeyIcon className="h-6 w-6" />,
         title: "Title Transfer",
         description:
-            "If you are buying or selling a car, we can help you Transfer the title from/to your name.",
+            "Process that Entails a Change of Ownership for a Motor Vehicle or Trailer",
     },
     {
         icon: <TruckIcon className="h-6 w-6" />,
         title: "Registration Renewal",
         description:
-            "We will renew your vehicle regestration, so you are legal on the road",
+            "Reneww your Vehicle Regestration so you are Legal on the Road",
     },
     {
-        icon: <BuildingOfficeIcon className="h-6 w-6" />,
+        icon: <CalendarDaysIcon className="h-6 w-6" />,
+        title: "Permits",
+        description:
+            "3 Days and 30 Days Permits",
+    },
+    {
+        icon: <DocumentIcon className="h-6 w-6" />,
+        title: "Motor Vehicle Records",
+        description:
+            "Any Certified or Uncertified MVR, From 39 Months to 10 Years.",
+    },
+];
+
+const services2: Array<BenefitType> = [
+    {
+        icon: <HandThumbUpIcon className="h-6 w-6" />,
+        title: "Placards",
+        description:
+            "Issue and Replace Temporary and Permanent Placards.",
+    },
+    {
+        icon: <EyeIcon className="h-6 w-6" />,
+        title: "Vehicle Insection",
+        description:
+            "Our Certified Processors Can Help You With Your Level I Inspection",
+    },
+    {
+        icon: <BriefcaseIcon className="h-6 w-6" />,
         title: "Dealer's Services",
         description:
             "Are you a Car Dealer and looking for competitive prices?",
     },
+    {
+        icon: <CreditCardIcon className="h-6 w-6" />,
+        title: "Plate Services",
+        description:
+            "Reinstating Plates, Resending Plates, Tab Replacement, and  Sold Notices",
+    },
 ];
-
 const container = {
     hidden: {},
     visible: {
@@ -60,10 +96,7 @@ const AllServices = ({ setSelectedPage }: Props) => {
                             visible: { opacity: 1, x: 0 },
                         }}
                     >
-                        <HText>WE ARE HERE TO HELP.</HText>
-                        <p className="my-5 text-sm text-gray-700">
-                            We Provide variaty of services for Customers and Dealers.
-                        </p>
+                        <HText>OUR SERVICES</HText>
                     </motion.div>
 
                     {/* Services */}
@@ -71,15 +104,32 @@ const AllServices = ({ setSelectedPage }: Props) => {
                         className="mt-5 items-center justify-between gap-8 md:flex"
                         initial="hidden"
                         whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                        variants={container}
+                    >
+                        {services.map((service: BenefitType) => (
+                            <Service
+                                key={service.title}
+                                icon={service.icon}
+                                title={service.title}
+                                description={service.description}
+                                setSelectedPage={setSelectedPage}
+                            />
+                        ))}
+                    </motion.div>
+                    <motion.div
+                        className="mt-5 items-center justify-between gap-8 md:flex"
+                        initial="hidden"
+                        whileInView="visible"
                         viewport={{ once: true, amount: 0.5 }}
                         variants={container}
                     >
-                        {services.map((benefit: BenefitType) => (
+                        {services2.map((service: BenefitType) => (
                             <Service
-                                key={benefit.title}
-                                icon={benefit.icon}
-                                title={benefit.title}
-                                description={benefit.description}
+                                key={service.title}
+                                icon={service.icon}
+                                title={service.title}
+                                description={service.description}
                                 setSelectedPage={setSelectedPage}
                             />
                         ))}
@@ -93,12 +143,12 @@ const AllServices = ({ setSelectedPage }: Props) => {
                         alt="services-page-graphic"
                         src={BenefitsPageGraphic}
                     />
-                    */}
+                        */}
                         {/* DESCRIPTION */}
                         <div>
                             {/* TITLE */}
                             <div className="relative">
-                                <div className="before:absolute before:-top-28 before:-left-20 before:z-[1] before:content-abstractwaves">
+                                <div className="before:absolute before:-top-28 before:-left-20 before:z-[1]">
                                     <motion.div
                                         initial="hidden"
                                         whileInView="visible"
@@ -110,46 +160,7 @@ const AllServices = ({ setSelectedPage }: Props) => {
                                         }}
                                         className="relative z-[2]"
                                     >
-                                        <HText>
-                                            HUNDEREDS OF HAPPY CUSTOMERS EVERYDAY.
-                                        </HText>
                                     </motion.div>
-                                </div>
-                            </div>
-
-                            {/* DESCRIPT */}
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, amount: 0.5 }}
-                                transition={{ delay: 0.2, duration: 0.5 }}
-                                variants={{
-                                    hidden: { opacity: 0, x: 50 },
-                                    visible: { opacity: 1, x: 0 },
-                                }}
-                            >
-                                <p className="my-5">
-                                    Nascetur aenean massa auctor tincidunt. Iaculis potenti amet
-                                    egestas ultrices consectetur adipiscing ultricies enim. Pulvinar
-                                    fames vitae vitae quis. Quis amet vulputate tincidunt at in
-                                    nulla nec. Consequat sed facilisis dui sit egestas ultrices
-                                    tellus. Ullamcorper arcu id pretium sapien proin integer nisl.
-                                    Felis orci diam odio.
-                                </p>
-                                <p className="mb-5">
-                                    Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
-                                    tellus quam porttitor. Mauris velit euismod elementum arcu neque
-                                    facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit
-                                    enim mattis odio in risus nunc.
-                                </p>
-                            </motion.div>
-
-                            {/* BUTTON */}
-                            <div className="relative mt-16">
-                                <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
-                                    <RouteLink page="Services" isButton={true}>
-                                        View Services
-                                    </RouteLink>
                                 </div>
                             </div>
                         </div>
@@ -160,4 +171,4 @@ const AllServices = ({ setSelectedPage }: Props) => {
     );
 };
 
-export default Services;
+export default AllServices;

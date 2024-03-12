@@ -4,6 +4,7 @@ import { SelectedPage } from "./types";
 type Props = {
     children: React.ReactNode;
     page: string;
+    classNameOverride?: string;
     isButton?: boolean;
     onClick?: () => void;
 }
@@ -15,7 +16,7 @@ type Props = {
  * TODO: This might need to be changed to indlue any route not just things from types.ts
  */
 
-function RouteLink({ page, children, isButton, onClick }: Props) {
+function RouteLink({ page, children, isButton, onClick, classNameOverride }: Props) {
     const lowerCasePage = page.toLowerCase().replace(/ /g, "") as SelectedPage;
     return (
         <>
@@ -30,7 +31,7 @@ function RouteLink({ page, children, isButton, onClick }: Props) {
                 (
                     <Link
                         to={"/" + lowerCasePage}
-                        className="text-secondary-500 transition duration-500 hover:text-secondary-500"
+                        className={classNameOverride === "" ? "text-secondary-500 transition duration-500 hover:text-secondary-500" : classNameOverride}
                         onClick={onClick}
                     >
                         {children}
