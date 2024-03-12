@@ -39,7 +39,6 @@ function App() {
                     <div>
                         <Home setSelectedPage={setSelectedPage} />
                         <Services setSelectedPage={setSelectedPage} />
-                        <MapComponent />
                     </div>
                 } />
 
