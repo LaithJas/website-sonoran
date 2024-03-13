@@ -4,8 +4,8 @@ declare global {
     interface Window {
         google: {
             maps: {
-                Map: any; // Adjust the type as needed
-                Marker: any; // Adjust the type as needed
+                Map: any;
+                Marker: any;
             };
             initMap: () => void;
         };
@@ -33,7 +33,12 @@ const MapComponent: React.FC = () => {
         }
 
         // Attach the initMap function to the window object
-        window.initMap = initMap;
+        if (!window.google) {
+            console.error("Google Maps API not loaded.");
+            return;
+        }
+
+        window.google.initMap = initMap;
 
         // Load the Google Maps JavaScript API script
         const script = document.createElement('script');
@@ -45,7 +50,7 @@ const MapComponent: React.FC = () => {
         return () => {
             // Clean up: remove the script when the component unmounts
             document.head.removeChild(script);
-            delete window.initMap;
+            delete window.google.initMap;
         };
     }, []);
 

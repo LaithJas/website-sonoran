@@ -6,7 +6,7 @@ const MapContainer: React.FC = () => {
     const desiredLocation = { lat: 33.412590, lng: -111.873930 }; // Example coordinates for New York City
 
     return (
-        <LoadScript
+ AIzaSyAaa1q_aPa90Lno-CvozJq4GWmKBLcLFAI       <LoadScript
             googleMapsApiKey="AIzaSyAaa1q_aPa90Lno-CvozJq4GWmKBLcLFAI"
         >
             <GoogleMap
